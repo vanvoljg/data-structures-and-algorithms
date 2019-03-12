@@ -13,7 +13,7 @@ const greeting = (word) => {
 }
 
 const speaker = (message, callback) => {
-  // Solution code here...
+  return callback(message);
 }
 
 /* ------------------------------------------------------------------------------------------------
