@@ -135,11 +135,11 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   const outArr = [];
-  arr.forEach( (item) => {
+  arr.forEach((item) => {
     (!(item % 3) && !(item % 5)) ? outArr.push('Fizz Buzz') :
-    !(item % 3) ? outArr.push('Fizz') :
-    !(item % 5) ? outArr.push('Buzz') :
-    outArr.push(item);
+      !(item % 3) ? outArr.push('Fizz') :
+        !(item % 5) ? outArr.push('Buzz') :
+          outArr.push(item);
   });
   return outArr;
 }
