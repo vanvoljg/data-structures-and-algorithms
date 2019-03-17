@@ -118,6 +118,14 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+  let regex = /s(?:eas)?h?ells/i;
+  let strArr = str.split(' ');
+  let rtnArr = [];
+  strArr.forEach ( (word) => {
+    word = word.replace(/[.,?!]/, '');
+    if (regex.test(word)) rtnArr.push(word);
+  });
+  return rtnArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
