@@ -38,6 +38,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let regex = /^[a-j].*/i;
+  let rtnArr = [];
+  arr.forEach((city) => {
+    if (regex.test(city)) rtnArr.push(city);
+  });
+  return rtnArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,6 +60,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  let regex = /^[Oo]ct(?:ober)?$/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,6 +76,14 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  let strArr = str.split(' ');
+  let rtnArr = [];
+  let regex = /[a-zA-Z0-9]+? /; 
+  strArr.forEach( (word) => {
+    word = word + ' ';
+    if (regex.test(word)) rtnArr.push(word);
+  });
+  return rtnArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,6 +100,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  let regex = /[aoeui]/gi;
+  return str.replace(regex, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,6 +118,14 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+  let regex = /s(?:eas)?h?ells/i;
+  let strArr = str.split(' ');
+  let rtnArr = [];
+  strArr.forEach ( (word) => {
+    word = word.replace(/[.,?!]/, '');
+    if (regex.test(word)) rtnArr.push(word);
+  });
+  return rtnArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
