@@ -38,6 +38,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let regex = /^[a-j].*/i;
+  let rtnArr = [];
+  arr.forEach((city) => {
+    if (regex.test(city)) rtnArr.push(city);
+  });
+  return rtnArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
