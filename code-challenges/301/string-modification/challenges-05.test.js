@@ -87,8 +87,9 @@ const listFoods = (recipe) => {
   // Solution code here...
   recipe.ingredients.forEach( (ingredient) => {
     let pattern = /\s/g; // match space character, global search for multiple matches
-    let match = pattern.exec(ingredient); // match the first space
-    match = pattern.exec(ingredient); // match the second space - possible because of /g flag on regex
+    // note the regex pattern is an object, properties updated by .exec method, so no need to save the return values
+    pattern.exec(ingredient); // match the first space
+    pattern.exec(ingredient); // match the second space - possible because of /g flag on regex
     result.push(ingredient.slice(pattern.lastIndex)); // .lastIndex property is the index immediately after the end of the match
   });
   return result;
@@ -105,6 +106,10 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach ( (ingredient) => {
+    let words = ingredient.split(' ');
+    result.push(words.slice(2).join(' ')); // drop the first two words, then join the rest with ' ' between.
+  })
   return result;
 };
 
