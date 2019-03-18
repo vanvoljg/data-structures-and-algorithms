@@ -147,6 +147,15 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  let idxArr = [];
+  arr.forEach( (item) => {
+    if (item % 2 === 0) {
+      idxArr.unshift(arr.indexOf(item)); // add the index to the beginning of the array, so we have them in reverse order, makes removal easier
+    }
+  });
+  idxArr.forEach ( (idx) => {
+    arr.splice(idx, 1);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
