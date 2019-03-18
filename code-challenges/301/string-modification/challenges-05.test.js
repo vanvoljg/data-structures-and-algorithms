@@ -16,6 +16,10 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i = str.length; i >= 0; i--) { // include 0-length string in the final array, so terminating condition includes 0
+    result.push(str);
+    str = str.slice(1); // reassign string minus first character
+  }
   return result;
 };
 
