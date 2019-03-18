@@ -85,6 +85,12 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach( (ingredient) => {
+    let pattern = /\s/g; // match space character, global search for multiple matches
+    let match = pattern.exec(ingredient); // match the first space
+    match = pattern.exec(ingredient); // match the second space - possible because of /g flag on regex
+    result.push(ingredient.slice(pattern.lastIndex)); // .lastIndex property is the index immediately after the end of the match
+  });
   return result;
 };
 
