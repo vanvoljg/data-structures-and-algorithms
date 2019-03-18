@@ -33,6 +33,11 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let rtn = [];
+  for (let i = 0; i < arr.length; i++) {
+    rtn.push(arr[i]);
+  }
+  return rtn;
 };
 
 
