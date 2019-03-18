@@ -16,7 +16,8 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
-  for (let i = str.length; i >= 0; i--) { // include 0-length string in the final array, so terminating condition includes 0
+  for (let i = str.length; i >= 0; i--) {
+    // include 0-length string in the final array, so terminating condition includes 0
     result.push(str);
     str = str.slice(1); // reassign string minus first character
   }
@@ -39,7 +40,6 @@ const wordsToCharList = (arr) => {
   }
   return rtn;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -66,7 +66,7 @@ const gruffaloCrumble = {
     '1 pound baking powder',
     '1 pound cinnamon',
     '6 gallons melted butter',
-    '2 gallons fresh water',
+    '2 gallons fresh water'
   ],
   steps: [
     'Pre-heat a large oven to 375',
@@ -77,15 +77,14 @@ const gruffaloCrumble = {
     'Combine gruffalo compote with water to maintain moisture in the oven',
     'Fold together remaining ingredients to make the crisp',
     'Spread the crisp evenly over the gruffalo mixture',
-    'Bake for 12-15 hours',
+    'Bake for 12-15 hours'
   ]
 };
-
 
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.ingredients.forEach( (ingredient) => {
+  recipe.ingredients.forEach((ingredient) => {
     let pattern = /\s/g; // match space character, global search for multiple matches
     // note the regex pattern is an object, properties updated by .exec method, so no need to save the return values
     pattern.exec(ingredient); // match the first space
@@ -106,10 +105,10 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.ingredients.forEach ( (ingredient) => {
+  recipe.ingredients.forEach((ingredient) => {
     let words = ingredient.split(' ');
     result.push(words.slice(2).join(' ')); // drop the first two words, then join the rest with ' ' between.
-  })
+  });
   return result;
 };
 
@@ -126,9 +125,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.steps.forEach ( (step) => {
+  recipe.steps.forEach((step) => {
     result.push(step.split(' ').slice(0, 1)[0]); // split the string, extract first word, push to array
-  })
+  });
   return result;
 };
 
@@ -148,12 +147,12 @@ For example:
 const removeEvenValues = (arr) => {
   // Solution code here...
   let idxArr = [];
-  arr.forEach( (item) => {
+  arr.forEach((item) => {
     if (item % 2 === 0) {
       idxArr.unshift(arr.indexOf(item)); // add the index to the beginning of the array, so we have them in reverse order, makes removal easier
     }
   });
-  idxArr.forEach ( (idx) => {
+  idxArr.forEach((idx) => {
     arr.splice(idx, 1);
   });
 };
@@ -181,7 +180,6 @@ const removeLastCharacters = (str, numberOfCharacters) => {
   return rtnStr.join(''); // return the joined array, which is a string
 };
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -192,12 +190,11 @@ const totalSumCSV = (str) => {
   let total = 0;
   // Solution code here...
   let numArr = str.split(','); // split string on commas, becomes an array
-  numArr.forEach( (num) => {
+  numArr.forEach((num) => {
     total += parseFloat(num); // convert string to a number and add to total
   });
   return total;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -209,8 +206,8 @@ For example, removeVowels('gregor') returns 'grgr'.
 
 const removeVowels = (str) => {
   // Solution code here...
-  let pattern = /[aoeui]/gi; // regex matching all vowels in the entire string, case-insensitive
-  str = str.replace(pattern, '');
+  let vowelsPattern = /[aoeui]/gi; // regex matching all vowels in the entire string, case-insensitive
+  str = str.replace(vowelsPattern, '');
   return str;
 };
 
@@ -226,6 +223,20 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 
 const extractVowels = (str) => {
   // Solution code here...
+  let vowelsPattern = /[aoeui]/gi;
+  let rtnArr = [];
+  let vowelArr = [];
+  // string.replace() can take a callback function for what it will replace, so we can do work there, like save the removed items
+  rtnArr.push(
+    str.replace(vowelsPattern, (match) => {
+      vowelArr.push(match);
+      return '';
+    })
+  );
+  // now sort the vowel array alphabetical
+  vowelArr.sort();
+  rtnArr.push(vowelArr.join(''));
+  return rtnArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -259,14 +270,38 @@ describe('Testing challenge 2', () => {
 
 describe('Testing challenge 3', () => {
   test('It should return a list of foods', () => {
-    expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
+    expect(listFoods(gruffaloCrumble)).toStrictEqual([
+      'Gruffalo',
+      'oats',
+      'brown sugar',
+      'flour',
+      'pure maple syrup',
+      'chopped nuts',
+      'baking soda',
+      'baking powder',
+      'cinnamon',
+      'melted butter',
+      'fresh water'
+    ]);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
   });
 });
 
 describe('Testing challenge 4', () => {
   test('It should return a list of foods', () => {
-    expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
+    expect(splitFoods(gruffaloCrumble)).toStrictEqual([
+      'Gruffalo',
+      'oats',
+      'brown sugar',
+      'flour',
+      'pure maple syrup',
+      'chopped nuts',
+      'baking soda',
+      'baking powder',
+      'cinnamon',
+      'melted butter',
+      'fresh water'
+    ]);
   });
 });
 
