@@ -102,10 +102,12 @@ hasChildrenValues(characters, 'Eddard') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-  let hasKids = false;
+  let hasKids;
   arr.forEach((person) => {
-    if (person.name === character) {
-      if (person.children.length) hasKids = true;
+    let name = Object.values(person)[0];
+    if (name === character) {
+      let kids = Object.values(person)[2];
+      hasKids = kids.length ? true : false;
     }
   });
   return hasKids;
@@ -121,6 +123,10 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let hasKids = false;
+  arr.forEach((person) => {
+    console.log(Object.entries(person));
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
