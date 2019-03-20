@@ -70,6 +70,10 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  return arr.map((num, idx) => {
+    return typeof(num) !== 'number' ? 'N/A' :
+      !(num % 2) !== 0 ? 'even' : 'odd';
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
