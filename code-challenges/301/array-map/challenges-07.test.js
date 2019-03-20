@@ -168,6 +168,12 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  return arr.map((stat, idx) => {
+    return {
+      name: stat.stat.name,
+      total: stat.effort + stat.baseStat
+    };
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
