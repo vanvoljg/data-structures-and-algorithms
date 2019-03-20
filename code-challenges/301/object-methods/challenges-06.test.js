@@ -123,10 +123,13 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
-  let hasKids = false;
+  let hasKids;
   arr.forEach((person) => {
-    console.log(Object.entries(person));
-  })
+    if (Object.entries(person)[0][1] === character){
+      hasKids = Object.entries(person)[2][1].length ? true : false;
+    }
+  });
+  return hasKids;
 };
 
 /* ------------------------------------------------------------------------------------------------
