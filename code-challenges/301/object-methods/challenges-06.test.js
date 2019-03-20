@@ -181,6 +181,18 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 const houseSurvivors = (arr) => {
   const survivors = [];
   // Solution code here...
+  arr.forEach((person) => {
+    let count = 1;
+    // spouse needs to not be deceased, and needs to exist
+    count += (Object.values(person)[1] && !deceasedSpouses.includes(Object.values(person)[1])) ? 1 : 0;
+    Object.values(person)[2].forEach((child) => {
+      count += 1;
+    });
+    survivors.push({
+      house: Object.values(person)[3],
+      members: count
+    });
+  });
   return survivors;
 };
 
