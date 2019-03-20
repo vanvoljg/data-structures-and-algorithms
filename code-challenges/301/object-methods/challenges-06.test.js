@@ -145,6 +145,18 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
+  // [0] is name, [1] is spouse, [2] is children, [3] is house
+  arr.forEach((person) => {
+    let count = 1; // Each person counts for themself
+    count += (Object.values(person)[1]) ? 1 : 0; // spouse?
+    Object.values(person)[2].forEach((child) => { // children
+      count += 1;
+    });
+    sizes.push({
+      house: Object.values(person)[3], // house name
+      members: count
+    });
+  });
   return sizes;
 };
 
