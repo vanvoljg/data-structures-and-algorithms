@@ -72,7 +72,7 @@ const evenOdd = (arr) => {
   // Solution code here...
   return arr.map((num, idx) => {
     return typeof(num) !== 'number' ? 'N/A' :
-      !(num % 2) !== 0 ? 'even' : 'odd';
+      !(num % 2) ? 'even' : 'odd';
   });
 };
 
@@ -120,6 +120,7 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
+  return arr.map((ability, idx) => ability.ability.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
