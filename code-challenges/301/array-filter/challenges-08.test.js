@@ -26,6 +26,9 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  return arr.filter(string => {
+    return (string.search(/[aoeui]/i) !== -1) ? true : false ; // string.search returns an index if found, or -1 if not
+  });
 };
 
 
