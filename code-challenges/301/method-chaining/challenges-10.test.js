@@ -13,10 +13,9 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  return input.reduce((count, item)=>{
-    return count += item.reduce((innerCount, number) => {
-      return innerCount += number === target ? 1 : 0;
-    }, 0);
+  return input.reduce((count, subArray) => {
+    subArray.forEach(number => count += number === target ? 1 : 0);
+    return count;
   }, 0);
 };
 
