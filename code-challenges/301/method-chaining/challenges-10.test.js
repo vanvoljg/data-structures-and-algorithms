@@ -32,6 +32,10 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  return input.reduce((sum, subArray) => {
+    subArray.forEach(number => sum += number);
+    return sum;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
