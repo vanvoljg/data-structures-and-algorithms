@@ -144,6 +144,9 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  return arr.reduce((total, person) => {
+    return total += person.children ? person.children.length : 0;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
