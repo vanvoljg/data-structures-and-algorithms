@@ -10,7 +10,7 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  return arr.reduce(a => a + 1);
+  return arr.reduce(a => a + 1, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -270,7 +270,7 @@ Run your tests from the console: jest challenges-09.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return the length of the array', () => {
-    expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
+    expect(countNumberOfElements([2, 2, 3, 4, 5])).toStrictEqual(5);
   });
 });
 
