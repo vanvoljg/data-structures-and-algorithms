@@ -192,7 +192,7 @@ const countPrimeNumbers = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
-
+FIXME: extractStat is misnamed on next line
 Write a function named extractState that, given the snorlaxData, below, uses reduce to return the object whose 'name' property matches the given string.
 
 If the input array does not have a stat with that specific name, the function should return null.
@@ -231,6 +231,11 @@ const snorlaxData = {
 
 const extractStat = (statName, arr) => {
   // Solution code here...
+  return arr.reduce((a, stat) => {
+    a.match = a.match ? a.match :
+      stat.stat.name === statName ? stat : null;
+    return a;
+  }, {}).match;
 };
 
 /* ------------------------------------------------------------------------------------------------
