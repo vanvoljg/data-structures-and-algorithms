@@ -250,6 +250,12 @@ Write a function named extractChildren that, given the array of characters from 
 
 const extractChildren = (arr) => {
   // Solution code here...
+  return arr.filter(character => {
+    return character.name.search(/a/i) !== -1;
+  }).reduce((a, character) => {
+    if (character.children) character.children.forEach(child => a.push(child));
+    return a;
+  },[]);
 };
 
 /* ------------------------------------------------------------------------------------------------
