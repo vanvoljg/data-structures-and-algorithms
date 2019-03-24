@@ -51,6 +51,12 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  return input.map(subArray => {
+    return subArray.filter(element => {
+      return typeof(element) !== 'number' ? false :
+        element % 5 === 0 ? true : false;
+    });
+  }).map(subArray => subArray.map(number => Math.pow(2, number)));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,17 +123,29 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  return data.reduce((nameArray, character) => {
+    if (['male', 'female'].includes(character.gender)) {
+      nameArray.push(character.name);
+    }
+    return nameArray;
+  }, []).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
+// FIXME: Next line should reference 'Challenge 4'
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
   // Solution code here...
+  return data.reduce((shortest, character) => {
+    if (parseFloat(shortest.height) > parseFloat(character.height)) shortest = character;
+    return shortest;
+  }).name;
 };
+
+console.log(findShortest(starWarsData));
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
