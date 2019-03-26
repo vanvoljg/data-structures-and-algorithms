@@ -71,6 +71,15 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // Solution code here...
+  return elements.reduce((closingTags, htmlString) => {
+    // The following while loop construction is based on MDN docs and examples
+    let matchArray;
+    let regex = /<(\/[a-z0-9]+)>/ig;
+    while ((matchArray = regex.exec(htmlString)) !== null) {
+      closingTags.push(matchArray[1]);
+    }
+    return closingTags;
+  },[]);
 };
 
 /* ------------------------------------------------------------------------------------------------
