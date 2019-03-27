@@ -113,6 +113,10 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  return numbers.reduce((product, subArray) => {
+    subArray.forEach(number => product *= number);
+    return product;
+  }, 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
