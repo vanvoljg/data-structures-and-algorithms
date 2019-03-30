@@ -73,6 +73,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+  return arr.filter(string => string.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
