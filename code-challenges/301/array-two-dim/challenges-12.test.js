@@ -192,6 +192,7 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 
 const excel = (str) => {
   // Solution code here...
+  return str.split('\n').map(rowString => rowString.split(',').reduce((sum, num) => Number(sum) + Number(num)))
 };
 
 /* ------------------------------------------------------------------------------------------------
