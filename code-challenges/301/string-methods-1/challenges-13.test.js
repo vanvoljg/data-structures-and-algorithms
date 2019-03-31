@@ -132,6 +132,10 @@ const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat
 
 const sortByDay = (arr) => {
   // Solution code here...
+  return daysOfWeek.map(day => arr.reduce((eventList, event) => {
+    if (event.includes(day)) eventList.push(event);
+    return eventList;
+  }, []));
 };
 
 /* ------------------------------------------------------------------------------------------------
