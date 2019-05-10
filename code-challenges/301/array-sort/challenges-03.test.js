@@ -47,7 +47,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => a.toLowerCase() > b.toLowerCase());
+  return arr.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1 );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,9 +101,7 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
-  return arr.sort(
-    (a, b) => a.lastName.toLowerCase() > b.lastName.toLowerCase()
-  );
+  return arr.sort( (a, b) => a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1 );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,8 +120,8 @@ const sortPeopleBetter = (arr) => {
     if (a.lastName.toLowerCase() === b.lastName.toLowerCase()) {
       if (a.firstName.toLowerCase() === b.firstName.toLowerCase()) {
         return a.age - b.age;
-      } else return a.firstName.toLowerCase() > b.firstName.toLowerCase();
-    } else return a.lastName.toLowerCase() > b.lastName.toLowerCase();
+      } else return a.firstName.toLowerCase() > b.firstName.toLowerCase() ? 1 : -1;
+    } else return a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1;
   });
 };
 
