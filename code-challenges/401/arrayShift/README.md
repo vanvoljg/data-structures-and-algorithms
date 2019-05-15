@@ -17,3 +17,9 @@ Write a function called insertShiftArray which takes in an array and the value t
 ![Embedded whiteboard picture](./assets/02.jpg)
 ![Embedded whiteboard picture](./assets/03.jpg)
 ![Embedded whiteboard picture](./assets/04.jpg)
+
+# Collaborators
+- Morgana Spake
+- Rebecca Peterson
+- Melissa Stock
+- Jagdeep Singh
