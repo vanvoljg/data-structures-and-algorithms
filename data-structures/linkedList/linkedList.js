@@ -11,7 +11,7 @@ class NodeSingle {
 
 class LinkedListSingle {
   constructor(value) {
-    // If the list is created with a value, set head point at a new node with that value
+    // If the list is created with a value, set head to point to a new node with that value
     // Otherwise, head should point to null.
     this.head = value ? new NodeSingle(value) : null;
 
@@ -29,50 +29,63 @@ class LinkedListSingle {
     // If this.head === null, the new node is created with next===null
     let newNode = new NodeSingle(value, this.head);
     this.head = this.tail = newNode;
-
+    return this;
   }
 
   insertAtTailReference(value) {
-
-    let newNode = new NodeSingle(value);
-    
     // When this.head === null, list is empty
     if (!this.head) {
-      this.head = this.tail = newNode;
-      return this;
+      this.insertAtHead(value);
     }
-
-
-
-  }
-
-  insertAtTailTraverse(value) {
 
     let newNode = new NodeSingle(value);
 
-    // when this.head === null, list is empty
+    this.tail.next = newNode;
+    return this;
+  }
+
+  insert(value, where = 'head') {
+    switch (where) {
+    case 'tail':
+      this.insertAtTailReference(value);
+      break;
+    default:
+      this.insertAtHead(value);
+      break;
+    }
+  }
+
+  includes(value) {
+    if (!value) {
+      console.error('A value to search for is required');
+      return null;
+    }
+
     if (!this.head) {
-      this.head = this.tail = newNode;
-      return this;
+      console.error('Cannot search in an empty list');
+      return null;
     }
 
     let current = this.head;
 
     // Traverse the list
-    // Current.next === null means we're at the tail node
     while (current.next) {
+      if (current.value === value) {
+        return true;
+      }
       current = current.next;
     }
 
-    // Current now points at the tail node, so use that for insertion
-    current.next = newNode;
-    return this;
-
+    return current === value;
   }
 }
 
-// let test = new LinkedListSingle();
-// console.log(new LinkedListSingle);
+let test = new LinkedListSingle();
+console.log(new LinkedListSingle());
+console.log(test.includes());
+test.insert('fish');
+test.insert('bob', 'tail');
+console.log(test);
 // test.insertAtHead('insert 1 value');
 // test.insertAtHead('insert 2 value');
 // test.insertAtHead('insert 3 value');
