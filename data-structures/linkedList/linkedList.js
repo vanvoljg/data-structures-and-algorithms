@@ -19,11 +19,6 @@ class LinkedListSingle {
     this.tail = this.head;
   }
 
-  insertBetween(node, next, prev) {
-    node.next = next;
-    prev.next = node;
-  }
-
   insertAtHead(value) {
     // When given a value, create a new node with that value
     // If this.head === null, the new node is created with next===null
