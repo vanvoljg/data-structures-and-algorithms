@@ -40,7 +40,7 @@ class LinkedListSingle {
 
     let newNode = new NodeSingle(value);
 
-    this.tail.next = newNode;
+    this.tail.next = this.tail = newNode;
     return this;
   }
 
@@ -78,14 +78,39 @@ class LinkedListSingle {
 
     return current === value;
   }
+
+  print() {
+    let printArray = [];
+
+    if (!this.head) {
+      return printArray;
+    }
+
+    let current = this.head;
+
+    while (current.next) {
+      printArray.push(current.value);
+      current = current.next;
+    }
+
+    printArray.push(current.value);
+
+    return printArray;
+  }
+
 }
 
-let test = new LinkedListSingle();
-console.log(new LinkedListSingle());
-console.log(test.includes());
-test.insert('fish');
-test.insert('bob', 'tail');
-console.log(test);
+let list = new LinkedListSingle();
+// console.log(new LinkedListSingle());
+// console.log(test.includes());
+list.insert('fish');
+list.insert('magic');
+list.insert('bob', 'tail');
+list.insertAtTailReference('FAIL');
+list.insertAtTailReference('tail');
+// console.log(test);
+// console.log(test.includes('nope'));
+console.log(list.print());
 // test.insertAtHead('insert 1 value');
 // test.insertAtHead('insert 2 value');
 // test.insertAtHead('insert 3 value');
