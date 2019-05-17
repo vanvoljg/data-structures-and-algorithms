@@ -1,0 +1,16 @@
+{
+  "name": "linkedList",
+  "version": "1.0.0",
+  "description": "",
+  "main": "linkedList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jesse Van Volkinburg <vanvoljg@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0"
+  }
+}
