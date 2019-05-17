@@ -2,8 +2,8 @@
 
 const linkedList = require('../linkedList.js');
 
-describe('It should pass the test', () => {
-  it('passes the test', () => {
+describe('Singly linked lists', () => {
+  it('Should pass an empty test', () => {
 
   });
 });
