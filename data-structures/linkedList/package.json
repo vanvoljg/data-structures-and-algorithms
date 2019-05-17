@@ -11,6 +11,7 @@
   "author": "Jesse Van Volkinburg <vanvoljg@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@types/jest": "^24.0.13",
     "eslint": "^5.16.0",
     "jest": "^24.8.0"
   }

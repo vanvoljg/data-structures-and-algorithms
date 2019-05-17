@@ -26,14 +26,23 @@ class LinkedListSingle {
 
   insertAtHead(value) {
     // When given a value, create a new node with that value
+    // If this.head === null, the new node is created with next===null
     let newNode = new NodeSingle(value, this.head);
-    this.head = newNode;
+    this.head = this.tail = newNode;
 
   }
 
   insertAtTailReference(value) {
 
     let newNode = new NodeSingle(value);
+    
+    // When this.head === null, list is empty
+    if (!this.head) {
+      this.head = this.tail = newNode;
+      return this;
+    }
+
+
 
   }
 
@@ -62,14 +71,15 @@ class LinkedListSingle {
   }
 }
 
-let test = new LinkedListSingle();
+// let test = new LinkedListSingle();
+// console.log(new LinkedListSingle);
 // test.insertAtHead('insert 1 value');
 // test.insertAtHead('insert 2 value');
 // test.insertAtHead('insert 3 value');
 // test.insertAtTailTraverse('value');
-console.log(test);
-test.insertAtTailTraverse('value2');
-test.insertAtTailTraverse('value4');
-console.log(test);
+// console.log(test);
+// test.insertAtTailTraverse('value2');
+// test.insertAtTailTraverse('value4');
+// console.log(test);
 
 module.exports = exports = { NodeSingle, LinkedListSingle };
