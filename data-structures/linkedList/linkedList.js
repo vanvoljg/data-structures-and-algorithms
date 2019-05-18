@@ -22,34 +22,45 @@ class LinkedListSingle {
   insertAtHead(value) {
     // When given a value, create a new node with that value
     // If this.head === null, the new node is created with next===null
-    let newNode = new NodeSingle(value, this.head);
-    this.head = this.tail = newNode;
+    this.head = new NodeSingle(value, this.head);
+
+    // If this.tail === null, this is a new list, so set tail to point at head
+    if (this.tail === null) { this.tail = this.head; }
+
     return this;
   }
 
-  insertAtTailReference(value) {
+  insertAtTail(value) {
     // When this.head === null, list is empty
-    if (!this.head) {
-      this.insertAtHead(value);
+    if (this.head === null) {
+      return this.insertAtHead(value);
     }
 
-    let newNode = new NodeSingle(value);
+    this.tail.next = new NodeSingle(value);
+    this.tail = this.tail.next;
 
-    this.tail.next = this.tail = newNode;
     return this;
   }
 
+  /**
+   * Insert wrapper to allow insert to insert at head or tail
+   * @param {*} value
+   * @param {string} where
+   */
   insert(value, where = 'head') {
     switch (where) {
     case 'tail':
-      this.insertAtTailReference(value);
-      break;
+      return this.insertAtTail(value);
     default:
-      this.insertAtHead(value);
-      break;
+      return this.insertAtHead(value);
     }
   }
 
+  /**
+   * Function to search for a specified value in a linked list
+   * @param {*} value Value to search for
+   * @returns {boolean}
+   */
   includes(value) {
     if (!value) {
       console.error('A value to search for is required');
@@ -71,9 +82,13 @@ class LinkedListSingle {
       current = current.next;
     }
 
-    return current === value;
+    return current.value === value;
   }
 
+  /**
+   * Function to get the values of a linked list
+   * @returns {Array} Array of values in the list
+   */
   print() {
     let printArray = [];
 
@@ -95,24 +110,11 @@ class LinkedListSingle {
 
 }
 
-let list = new LinkedListSingle();
-// console.log(new LinkedListSingle());
-// console.log(test.includes());
-list.insert('fish');
-list.insert('magic');
-list.insert('bob', 'tail');
-list.insertAtTailReference('FAIL');
-list.insertAtTailReference('tail');
-// console.log(test);
-// console.log(test.includes('nope'));
-console.log(list.print());
-// test.insertAtHead('insert 1 value');
-// test.insertAtHead('insert 2 value');
-// test.insertAtHead('insert 3 value');
-// test.insertAtTailTraverse('value');
-// console.log(test);
-// test.insertAtTailTraverse('value2');
-// test.insertAtTailTraverse('value4');
-// console.log(test);
+let list = new LinkedListSingle('value1');
+// console.log(list.insert('value2','tail'));
+// list.insert('value2', 'tail');
+list.insert('value2');
+list.insert('value3');
+console.log(list);
 
 module.exports = exports = { NodeSingle, LinkedListSingle };
