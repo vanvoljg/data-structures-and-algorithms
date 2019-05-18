@@ -21,3 +21,7 @@ Repository for work on data structures and algorithms
 ### 401 - Data manipulation
 - [Array Reverse](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/arrayReverse)
 - [Array Shift Insert](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/arrayShift)
+- [Array Binary Search]()
+
+### 401 - Data structures
+- [Singly Linked List](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/data-structures/linkedList)
