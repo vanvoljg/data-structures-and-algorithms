@@ -108,11 +108,4 @@ class LinkedListSingle {
 
 }
 
-let list = new LinkedListSingle('value1');
-// console.log(list.insert('value2','tail'));
-// list.insert('value2', 'tail');
-list.insert('value2');
-list.insert('value3');
-console.log(list);
-
 module.exports = exports = { NodeSingle, LinkedListSingle };
