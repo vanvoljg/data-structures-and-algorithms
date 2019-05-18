@@ -10,7 +10,19 @@ Will return false when searching for a value in the linked list that does not ex
 Can properly return a collection of all the values that exist in the linked list
 */
 
-const {LinkedListSingle: LinkedList} = require('../linkedList.js');
+const {LinkedListSingle: LinkedList, NodeSingle: Node} = require('../linkedList.js');
+
+describe('Linked Lists are a collection of Nodes', () => {
+  describe('Nodes can be created on their own', () => {
+    it('With no parameters', () => {
+      let node = new Node;
+      expect(node).toBeInstanceOf(Node);
+      expect(node.value).toBeNull();
+      expect(node.next).toBeNull();
+    });
+  });
+});
+
 
 describe('Singly linked lists', () => {
   
@@ -78,7 +90,9 @@ describe('Singly linked lists', () => {
   });
 
   it('Can return a collection of the values that exist in the list', () => {
-    let list = new LinkedList('value1');
+    let list = new LinkedList;
+    expect(list.print()).toEqual([]);
+    list.insert('value1');
     list.insert('value2');
     expect(list.print()).toEqual(['value2', 'value1']);
   });

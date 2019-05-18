@@ -75,14 +75,14 @@ class LinkedListSingle {
     let current = this.head;
 
     // Traverse the list
-    while (current.next) {
+    while (current) {
       if (current.value === value) {
         return true;
       }
       current = current.next;
     }
 
-    return current.value === value;
+    return false;
   }
 
   /**
@@ -98,12 +98,10 @@ class LinkedListSingle {
 
     let current = this.head;
 
-    while (current.next) {
+    while (current) {
       printArray.push(current.value);
       current = current.next;
     }
-
-    printArray.push(current.value);
 
     return printArray;
   }
