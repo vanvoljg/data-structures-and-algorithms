@@ -51,13 +51,13 @@ describe('Singly linked lists', () => {
 
   it('Can have values inserted at the tail', () => {
     let list = new LinkedList('value1');
-    list.insert('value2', 'tail');
+    list.append('value2');
     expect(list.tail.value).toStrictEqual('value2');
   });
 
   it('Can have values inserted at the tail of an empty list', () => {
     let list = new LinkedList;
-    list.insert('value1', 'tail');
+    list.append('value1');
     expect(list.tail.value).toStrictEqual('value1');
   })
 
@@ -95,5 +95,17 @@ describe('Singly linked lists', () => {
     list.insert('value1');
     list.insert('value2');
     expect(list.print()).toEqual(['value2', 'value1']);
+  });
+
+  it('Can insert before a specified value', () => {
+    let list = new LinkedList('1');
+    list.insertBefore('1', '2');
+    expect(list.head).toEqual({value:'2',next:{value:'1',next:null}});
+  });
+
+  it('can insert after a specified value', () => {
+    let list = new LinkedList('1');
+    list.insertAfter('1', '2');
+    expect(list.head).toEqual({value:'1',next:{value:'2',next:null}});
   });
 });

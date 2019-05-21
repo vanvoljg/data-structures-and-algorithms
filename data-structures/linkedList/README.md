@@ -13,10 +13,10 @@ LinkedList stores both a head and tail reference to allow for O(1) insertions at
 - `includes()` efficiency: O(n) Time, O(1) Space
 - `print()` efficiency: O(n) Time, O(n) Space
 
-## API
+## Classes and Methods
 - `LinkedListSingle` - Class which describes a singly-linked list.
-  - `.insert([value])` - Value is optional. Will insert the specified value (or `null`) at the head of the list.
-  - `.insert(value, 'tail')` - Will insert the specified value at the tail of the list.
+  - `.insert([value])` - Will insert the specified value (or `null`) at the head of the list. Value is optional.
+  - `.append([value]) - Will insert at the tail of the list. Value is optional.
   - `.includes(value)` - Searches for a specified value in the list. Returns `true` or `false`. Returns `null` if no value is specified.
   - `.print()` - Returns a collection (array) of the values in the list.
 - `NodeSingle` - Class describing a singly-linked node.
