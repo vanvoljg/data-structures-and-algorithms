@@ -19,7 +19,7 @@ class LinkedListSingle {
     this.tail = this.head;
   }
 
-  insertAtHead(value) {
+  insert(value) {
     // When given a value, create a new node with that value
     // If this.head === null, the new node is created with next===null
     this.head = new NodeSingle(value, this.head);
@@ -30,7 +30,7 @@ class LinkedListSingle {
     return this;
   }
 
-  insertAtTail(value) {
+  append(value) {
     // When this.head === null, list is empty
     if (this.head === null) {
       return this.insertAtHead(value);
@@ -40,20 +40,6 @@ class LinkedListSingle {
     this.tail = this.tail.next;
 
     return this;
-  }
-
-  /**
-   * Insert wrapper to allow insert to insert at head or tail
-   * @param {*} value
-   * @param {string} where
-   */
-  insert(value, where = 'head') {
-    switch (where) {
-    case 'tail':
-      return this.insertAtTail(value);
-    default:
-      return this.insertAtHead(value);
-    }
   }
 
   /**
