@@ -170,6 +170,23 @@ class LinkedListSingle {
     return printArray;
   }
 
+  /**
+   * Finds an element starting from the end of the list.
+   * @param {int} k index, from the end of the list, of element to find
+   * @returns {*} Value of the requested element
+   */
+  kthFromEnd(k) {
+    if (typeof k !== 'number' || k < 0 || k >= this.length) {
+      throw new ReferenceError('Out of range');
+    }
+    if ( k === 0 ) { return this.tail.value; }
+    let current = this.head;
+    for (let i = 0; k < this.length - k -1; i ++) {
+      current = current.next;
+    }
+    return current.value;
+  }
+
 }
 
 module.exports = exports = { NodeSingle, LinkedListSingle };
