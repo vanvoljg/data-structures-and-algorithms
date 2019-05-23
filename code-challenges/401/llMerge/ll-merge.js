@@ -27,3 +27,5 @@ function mergeLists(list1, list2) {
 
   return head;
 }
+
+module.export = exports = mergeLists;
