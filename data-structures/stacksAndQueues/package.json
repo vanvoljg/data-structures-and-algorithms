@@ -1,8 +1,8 @@
 {
-  "name": "linkedlist",
+  "name": "stacksandqueues",
   "version": "1.0.0",
   "description": "",
-  "main": "linkedList.js",
+  "main": "lib/stacks-and-queues.js",
   "scripts": {
     "test": "jest --verbose --coverage",
     "test-watch": "jest --verbose --coverage --watchAll"

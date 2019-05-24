@@ -16,26 +16,32 @@ describe('Nodes can be created on their own', () => {
   it('With no parameters', () => {
     let node = new Node();
     expect(node).toBeInstanceOf(Node);
-    expect(node.value).toBeUndefined();
+    expect(node.value).toBeNull();
     expect(node.next).toBeNull();
   });
 
-  it('With a single parameter, sets the node value to that value', () => {
+  it('With a single truthy parameter, sets the node value to that value', () => {
     let nodeString = new Node('test');
     let nodeNumber = new Node(1);
     let nodeArray = new Node([1]);
     let nodeObject = new Node({ test: 'a' });
-    let nodeBoolean = new Node(true);
+    let nodeTrue = new Node(true);
     expect(nodeString.value).toEqual('test');
     expect(nodeNumber.value).toEqual(1);
     expect(nodeArray.value).toEqual([1]);
     expect(nodeObject.value).toEqual({ test: 'a' });
-    expect(nodeBoolean.value).toBeTruthy();
+    expect(nodeTrue.value).toBeTruthy();
+  });
+
+  it('Will set the node value to "false" when the given parameter is "false"', () => {
+    let nodeFalse = new Node(false);
+    expect(nodeFalse.value).toEqual(false);
+  });
+
+  it('Will set the node value to "null" when the given parameter is undefined or null', () => {
     let nodeNull = new Node(null);
     let nodeUndefined = new Node(undefined);
-    let nodeBooleanFalse = new Node(false);
     expect(nodeNull.value).toBeNull();
-    expect(nodeUndefined.value).toBeUndefined();
-    expect(nodeBooleanFalse.value).toEqual(false);
+    expect(nodeUndefined.value).toBeNull();
   });
 });

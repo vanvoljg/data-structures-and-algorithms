@@ -12,7 +12,7 @@ module.exports = class NodeSingle {
    * @param {*} value Value to create the node with
    * @param {Node} next The node which will be pointed to by the new node.
    */
-  constructor(value, next = null) {
+  constructor(value = null, next = null) {
     this.value = value;
     this.next = next;
   }
