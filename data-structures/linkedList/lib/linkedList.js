@@ -1,15 +1,18 @@
 'use strict';
 
-class NodeSingle {
-  // If no value is given for insertion, create a node with value=null.
-  // If given a next, use that as the reference pointed by next.
-  constructor(value = null, next = null) {
-    this.value = value;
-    this.next = next;
-  }
-}
+const Node = require('./node.js');
 
-class LinkedListSingle {
+/**
+ * Singly Linked List class
+ * @class LinkedListSingle
+ */
+module.exports = class LinkedListSingle {
+
+  /**
+   * Constructor
+   * @param {*} value Value to use as the value of the first node of the list.
+   * If not given, will create an empty list with no nodes.
+   */
   constructor(value) {
     // If the list is created with a value, set head to point to a new node with that value
     // Otherwise, head should point to null.
@@ -17,7 +20,7 @@ class LinkedListSingle {
     this.length = 0;
 
     if (value) {
-      this.head = new NodeSingle(value);
+      this.head = new Node(value);
       this.length++;
     }
 
@@ -33,7 +36,7 @@ class LinkedListSingle {
   insert(value) {
     // When given a value, create a new node with that value
     // If this.head === null, the new node is created with next===null
-    this.head = new NodeSingle(value, this.head);
+    this.head = new Node(value, this.head);
 
     // If this.tail === null, this is a new list, so set tail to point at head
     if (this.tail === null) { this.tail = this.head; }
@@ -53,7 +56,7 @@ class LinkedListSingle {
       return this.insert(value);
     }
 
-    this.tail.next = new NodeSingle(value);
+    this.tail.next = new Node(value);
     this.tail = this.tail.next;
     this.length++;
 
@@ -82,7 +85,7 @@ class LinkedListSingle {
 
     while (current.next) {
       if ( current.next.value === value ) {
-        let newNode = new NodeSingle(newValue, current.next);
+        let newNode = new Node(newValue, current.next);
         current.next = newNode;
         this.length++;
         return this;
@@ -109,7 +112,7 @@ class LinkedListSingle {
     
     while (current) {
       if (current.value === value) {
-        let newNode = new NodeSingle(newValue, current.next);
+        let newNode = new Node(newValue, current.next);
         current.next = newNode;
         this.length++;
         return this;
@@ -187,6 +190,5 @@ class LinkedListSingle {
     return current.value;
   }
 
-}
+};
 
-module.exports = exports = { NodeSingle, LinkedListSingle };
