@@ -10,7 +10,7 @@ Will return false when searching for a value in the linked list that does not ex
 Can properly return a collection of all the values that exist in the linked list
 */
 
-const LinkedList = require('../linkedList.js');
+const LinkedList = require('../lib/linkedList.js');
 
 describe('Singly linked lists', () => {
   it('Can be created with no input', () => {
