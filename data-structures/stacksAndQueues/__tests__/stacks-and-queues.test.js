@@ -8,8 +8,7 @@ describe('Stack', () => {
   it('Can instantiate an empty stack', () => {
     let stack = new Stack();
     expect(stack.length).toEqual(0);
-    expect(stack.top.value).toBeNull();
-    expect(stack.top.next).toBeNull();
+    expect(stack.top).toBeNull();
   });
 
   it('Can instantiate with a value', () => {
@@ -53,6 +52,11 @@ describe('Stack', () => {
     expect(stack.peek()).toEqual(testValues[2]);
   });
 
+  it('push returns the new length of the stack', () => {
+    let stack = new Stack();
+    expect(stack.push(5)).toEqual(1);
+  });
+
   it('Can pop an item off', () => {
     let stack = new Stack(testValues[0]);
     stack.push(testValues[1]);
@@ -80,8 +84,7 @@ describe('Queue', () => {
   it('Can instantiate an empty queue', () => {
     let queue = new Queue();
     expect(queue.length).toEqual(0);
-    expect(queue.front.value).toBeNull();
-    expect(queue.front.next).toBeNull();
+    expect(queue.front).toBeNull();
   });
 
   it('Can instantiate with a value', () => {
@@ -123,6 +126,11 @@ describe('Queue', () => {
     });
     expect(queue.length).toEqual(testValues.length);
     expect(queue.peek()).toEqual(testValues[0]);
+  });
+
+  it('enqueue returns the new length of the queue', () => {
+    let queue = new Queue();
+    expect(queue.enqueue(5)).toEqual(1);
   });
 
   it('Can dequeue the next item', () => {
