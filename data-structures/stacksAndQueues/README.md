@@ -18,15 +18,22 @@ Queue: a linear data structure, First In, First Out (FIFO) / Last In, Last Out (
 
 
 ## Approach & Efficiency
-LinkedList stores both a head and tail reference to allow for O(1) insertions at either head or tail.
-- `insert()` efficiency: O(1) Time, O(1) Space at either head or tail.
-- `includes()` efficiency: O(n) Time, O(1) Space
-- `print()` efficiency: O(n) Time, O(n) Space
+### Stack class
+- `.push()` efficiency: O(1) Time, O(1) Space
+- `.pop()` efficiency: O(1) Time, O(1) Space
+- `.peek()` efficiency: O(1) Time, O(1) Space
+### Queue class
+- `.enqueue()` efficiency: O(1) Time, O(1) Space
+- `.dequeue()` efficiency: O(1) Time, O(1) Space
+- `.peek()` efficiency: O(1) Time, O(1) Space
+
 
 ## Classes and Methods
-- `LinkedListSingle` - Class which describes a singly-linked list.
-  - `.insert([value])` - Will insert the specified value (or `null`) at the head of the list. Value is optional.
-  - `.append([value]) - Will insert at the tail of the list. Value is optional.
-  - `.includes(value)` - Searches for a specified value in the list. Returns `true` or `false`. Returns `null` if no value is specified.
-  - `.print()` - Returns a collection (array) of the values in the list.
-- `NodeSingle` - Class describing a singly-linked node.
+- `Stack` - Last In, Frst Out (LIFO) / First In, Last Out (FILO). Linear data structure.
+  - `.push([value])` - Adds a value to the top of the stack and returns the new length of the stack.
+  - `.pop()` - Removes the top value from the stack and returns it.
+  - `.peek()` - Returns the top value from the stack, without modifying the stack.
+- `Queue` - First In, First Out (FIFO) / Last In, Last Out (LILO). Linear data structure.
+  - `.enqueue([value])` - Adds a value to the back queue and returns the new length of the queue.
+  - `.dequeue()` - Removes the next value from the front of the queue and returns it.
+  - `.peek()` - Returns the front value from the queue, without modifying the queue.
