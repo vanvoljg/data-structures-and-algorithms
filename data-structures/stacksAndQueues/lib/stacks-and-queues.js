@@ -42,10 +42,30 @@ class Queue {
       this.front = new Node(value);
       this.length++;
     }
+
+    this.back = this.front;
   }
 
   peek() {
     return this.front !== null ? this.front.value : null;
+  }
+
+  enqueue(value) {
+    let node = new Node(value);
+    if (this.length === 0) {
+      this.front = this.back = node;
+    } else {
+      this.back.next = node;
+    }
+    return ++this.length;
+  }
+
+  dequeue() {
+    if (this.front === null) {return null;}
+    let value = this.front.value;
+    this.front = this.front.next;
+    this.length--;
+    return value;
   }
 }
 

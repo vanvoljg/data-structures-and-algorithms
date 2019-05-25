@@ -146,7 +146,7 @@ describe('Queue', () => {
     let queue = new Queue(testValues[0]);
     let removed = queue.dequeue();
     expect(removed).toEqual(testValues[0]);
-    expect(queue.length).toEqual(1);
+    expect(queue.length).toEqual(0);
     expect(queue.peek()).toBeNull();
   });
 
