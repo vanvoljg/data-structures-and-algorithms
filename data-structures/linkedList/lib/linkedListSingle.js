@@ -1,6 +1,6 @@
 'use strict';
 
-const Node = require('./node.js');
+const Node = require('./nodeSingle.js');
 
 /**
  * Singly Linked List class
@@ -179,12 +179,18 @@ module.exports = class LinkedListSingle {
    * @returns {*} Value of the requested element
    */
   kthFromEnd(k) {
-    if (typeof k !== 'number' || k < 0 || k >= this.length) {
-      throw new ReferenceError('Out of range');
+    if (k instanceof Number) {
+      k = Number(k);
+    }
+    if (typeof k !== 'number' || k % 1 !== 0) {
+      throw new TypeError('Index must be an integer');
+    }
+    if (k < 0 || k >= this.length) {
+      throw new ReferenceError();
     }
     if ( k === 0 ) { return this.tail.value; }
     let current = this.head;
-    for (let i = 0; k < this.length - k -1; i ++) {
+    for (let i = 0; i < this.length - k -1; i ++) {
       current = current.next;
     }
     return current.value;

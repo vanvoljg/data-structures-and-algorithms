@@ -10,7 +10,7 @@ Will return false when searching for a value in the linked list that does not ex
 Can properly return a collection of all the values that exist in the linked list
 */
 
-const LinkedList = require('../lib/linkedList.js');
+const LinkedList = require('../lib/linkedListSingle.js');
 
 describe('Singly linked lists', () => {
   it('Can be created with no input', () => {
@@ -97,5 +97,54 @@ describe('Singly linked lists', () => {
     let list = new LinkedList('1');
     list.insertAfter('1', '2');
     expect(list.head).toEqual({ value: '1', next: { value: '2', next: null } });
+  });
+
+  it('returns the kth element from the end', () => {
+    let list = new LinkedList(3);
+    list.insert(4);
+    list.insert(5);
+    expect(list.kthFromEnd(0)).toEqual(3);
+    expect(list.kthFromEnd(1)).toEqual(4);
+    expect(list.kthFromEnd(2)).toEqual(5);
+  });
+
+  it('returns a ReferenceError when k is out of range', () => {
+    // let error = jest.spyOn(global.console, 'error').mockImplementation(() => {});
+    let list = new LinkedList('a');
+
+    expect(() => {
+      list.kthFromEnd(3);
+    }).toThrow(ReferenceError);
+    
+    expect(() => {
+      list.kthFromEnd(-1);
+    }).toThrow(ReferenceError);
+  });
+
+  it('works with a list of length 1', () => {
+    let list = new LinkedList(5);
+    expect(list.kthFromEnd(0)).toEqual(5);
+  });
+
+  it('works for the last element', () => {
+    let list = new LinkedList(5);
+    list.insert(6);
+    list.append(8);
+    expect(list.kthFromEnd(2)).toEqual(6);
+  });
+
+  it('returns a TypeError when k is not an integer', () => {
+    let list = new LinkedList('b');
+
+    expect(() => {
+      list.kthFromEnd('b');
+    }).toThrow(TypeError);
+
+  });
+
+  it('works with a Number object type for k', () => {
+    let list = new LinkedList('a');
+    let idx = new Number(0);
+    expect(list.kthFromEnd(idx)).toEqual('a');
   });
 });
