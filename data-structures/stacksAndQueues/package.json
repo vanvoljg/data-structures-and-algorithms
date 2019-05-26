@@ -1,15 +1,15 @@
 {
-  "name": "linkedlist",
+  "name": "stacksandqueues",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/linkedList.js",
+  "main": "lib/stacks-and-queues.js",
   "scripts": {
     "test": "jest --verbose --coverage",
     "test-watch": "jest --verbose --coverage --watchAll"
   },
   "keywords": [],
   "author": "Jesse Van Volkinburg <vanvoljg@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "@types/jest": "^24.0.13",
     "eslint": "^5.16.0",
