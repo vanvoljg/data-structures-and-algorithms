@@ -30,7 +30,7 @@ describe('Singly linked lists', () => {
     expect(list.head).toEqual(list.tail);
   });
 
-  describe('insert function', () => {
+  describe('insert() function', () => {
     it('Can insert at the head', () => {
       let list = new LinkedList('value1');
       list.insert('value2');
@@ -47,7 +47,7 @@ describe('Singly linked lists', () => {
     });
   });
 
-  describe('append function', () => {
+  describe('append() function', () => {
     it('Can insert at the tail', () => {
       let list = new LinkedList('value1');
       list.append('value2');
@@ -61,7 +61,7 @@ describe('Singly linked lists', () => {
     });
   });
 
-  describe('includes function', () => {
+  describe('includes() function', () => {
     it('Will return null when searching an empty list', () => {
       let list = new LinkedList();
       expect(list.includes('value')).toBeNull();
@@ -85,7 +85,7 @@ describe('Singly linked lists', () => {
     });
   });
 
-  describe('print function', () => {
+  describe('print() function', () => {
     it('Can return a collection of the values that exist in the list', () => {
       let list = new LinkedList();
       expect(list.print()).toEqual([]);
@@ -95,7 +95,7 @@ describe('Singly linked lists', () => {
     });
   });
 
-  describe('insertBefore function', () => {
+  describe('insertBefore() function', () => {
     it('Can insert before a specified value', () => {
       let list = new LinkedList('1');
       list.insertBefore('1', '2');
@@ -116,7 +116,7 @@ describe('Singly linked lists', () => {
     });
   });
 
-  describe('insertAfter function', () => {
+  describe('insertAfter() function', () => {
     it('can insert after a specified value', () => {
       let list = new LinkedList('1');
       list.insertAfter('1', '2');
@@ -134,7 +134,7 @@ describe('Singly linked lists', () => {
     });
   });
 
-  describe('kthFromEnd function', () => {
+  describe('kthFromEnd() function', () => {
     it('returns the kth element from the end', () => {
       let list = new LinkedList(3);
       list.insert(4);
@@ -184,7 +184,7 @@ describe('Singly linked lists', () => {
     });
   });
 
-  describe('findMiddle functions', () => {
+  describe('findMiddle() functions', () => {
     it('findMiddleIdx returns middle index', () => {
       let list = new LinkedList('a');
       expect(list.findMiddleIdx()).toEqual(0);
