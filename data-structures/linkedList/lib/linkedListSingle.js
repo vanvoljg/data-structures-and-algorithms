@@ -7,7 +7,6 @@ const Node = require('./nodeSingle.js');
  * @class LinkedListSingle
  */
 module.exports = class LinkedListSingle {
-
   /**
    * Constructor
    * @param {*} value Value to use as the value of the first node of the list.
@@ -39,7 +38,9 @@ module.exports = class LinkedListSingle {
     this.head = new Node(value, this.head);
 
     // If this.tail === null, this is a new list, so set tail to point at head
-    if (this.tail === null) { this.tail = this.head; }
+    if (this.tail === null) {
+      this.tail = this.head;
+    }
     this.length++;
 
     return this;
@@ -84,7 +85,7 @@ module.exports = class LinkedListSingle {
     }
 
     while (current.next) {
-      if ( current.next.value === value ) {
+      if (current.next.value === value) {
         let newNode = new Node(newValue, current.next);
         current.next = newNode;
         this.length++;
@@ -109,7 +110,7 @@ module.exports = class LinkedListSingle {
     }
 
     let current = this.head;
-    
+
     while (current) {
       if (current.value === value) {
         let newNode = new Node(newValue, current.next);
@@ -119,7 +120,7 @@ module.exports = class LinkedListSingle {
       }
       current = current.next;
     }
-    
+
     throw new ReferenceError(`${value} not in list`);
   }
 
@@ -188,13 +189,21 @@ module.exports = class LinkedListSingle {
     if (k < 0 || k >= this.length) {
       throw new ReferenceError();
     }
-    if ( k === 0 ) { return this.tail.value; }
+    if (k === 0) {
+      return this.tail.value;
+    }
     let current = this.head;
-    for (let i = 0; i < this.length - k -1; i ++) {
+    for (let i = 0; i < this.length - k - 1; i++) {
       current = current.next;
     }
     return current.value;
   }
 
-};
+  findMiddleIdx() {
+    return Math.floor((this.length - 1) / 2);
+  }
 
+  findMiddleValue() {
+    return this.kthFromEnd(this.length - this.findMiddleIdx() - 1);
+  }
+};
