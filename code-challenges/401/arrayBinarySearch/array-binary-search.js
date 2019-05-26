@@ -8,18 +8,28 @@
  * @returns {Number} Index of the number found in the array, or -1 if not found.
  */
 module.exports = function binarySearch(arr, value) {
+  // type checking
+  if (!(arr instanceof Array)) {
+    return null;
+  }
+  if (value instanceof Number) {
+    value = Number(value);
+  }
+  if (typeof value !== 'number') {
+    return null;
+  }
   let left = 0;
   let right = arr.length - 1;
   while (left <= right) {
     let m = Math.floor((left + right) / 2);
-    if (arr[m] === value) {
-      return m;
-    }
     if (arr[m] < value) {
       left = m + 1;
     }
     if (arr[m] > value) {
       right = m - 1;
+    }
+    if (arr[m] === value) {
+      return m;
     }
   }
   return -1;
