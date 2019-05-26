@@ -21,5 +21,5 @@ Write a function called `BinarySearch` which takes in 2 parameters: a sorted arr
 - Space: O(1)
 
 ## Solution
-![Embedded whiteboard picture](./assets/whiteboard-1.jpg)
-![Embedded whiteboard picture](./assets/whiteboard-2.jpg)
+![Embedded whiteboard picture](./assets/array_binary_search-1.jpg)
+![Embedded whiteboard picture](./assets/array_binary_search-2.jpg)
