@@ -10,7 +10,7 @@ Will return false when searching for a value in the linked list that does not ex
 Can properly return a collection of all the values that exist in the linked list
 */
 
-const Node = require('../lib/node.js');
+const Node = require('../lib/nodeSingle.js');
 
 describe('Nodes can be created on their own', () => {
   it('With no parameters', () => {
