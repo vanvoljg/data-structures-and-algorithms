@@ -171,7 +171,7 @@ const extractStats = (arr) => {
   return arr.map((stat, idx) => {
     return {
       name: stat.stat.name,
-      total: stat.effort + stat.baseStat
+      total: stat.effort + stat.baseStat,
     };
   });
 };
@@ -259,9 +259,9 @@ describe('Testing challenge 6', () => {
 describe('Testing challenge 7', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
-      { name: 'speed', total: 35, },
-      { name: 'special-defense', total: 112, },
-      { name: 'special-attack', total: 74, },
+      { name: 'speed', total: 35 },
+      { name: 'special-defense', total: 112 },
+      { name: 'special-attack', total: 74 },
     ]);
     expect(extractStats(snorlaxStats.stats).length).toStrictEqual(3);
   });

@@ -1,16 +1,19 @@
 {
-  "name": "3-code-challenges",
+  "name": "data-structures-and-algorithms",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose",
-    "watch": "jest --watchall"
+    "watch": "jest --watchall",
+    "lint": "eslint '**/*.js'",
+    "lint-fix": "eslint --fix '**/*.js'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jesse Van Volkinburg <vanvoljg@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "jest": "^24.5.0"
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0"
   }
 }

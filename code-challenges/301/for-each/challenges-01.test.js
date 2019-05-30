@@ -10,11 +10,11 @@ Then, write a function named speaker that takes in a string and a callback funct
 
 const greeting = (word) => {
   return word.toUpperCase();
-}
+};
 
 const speaker = (message, callback) => {
   return callback(message);
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -34,14 +34,14 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   arr.push(value);
-}
+};
 
 const addNumbers = (num, arr, times, callback) => {
   for (let i = 0; i < times; i++) {
     callback(arr, num);
   }
   return arr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -57,14 +57,14 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   if (num % 3 === 2) arr.pop();
-}
+};
 
 const removeElements = (arr, callback) => {
   for (let i = 0; i < arr.length; i++) {
     callback(arr[i], arr);
   }
   return arr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -75,7 +75,7 @@ Write a function named removeWithForEach that produces the same output as challe
 const removeWithForEach = (arr, callback) => {
   arr.forEach( (num) => callback(num, arr) );
   return arr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -89,10 +89,10 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   arr.forEach( (num, i, arr) => {
-    if (num % 3 === 2) arr.pop()
+    if (num % 3 === 2) arr.pop();
   });
   return arr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -117,7 +117,7 @@ const createList = (availableItems) => {
     if (item.available) list.push(item.name);
   });
   return list;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -142,7 +142,7 @@ const fizzbuzz = (arr) => {
           outArr.push(item);
   });
   return outArr;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

@@ -23,6 +23,8 @@ Repository for work on data structures and algorithms
 - [Array Shift Insert](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/arrayShift)
 - [Array Binary Search](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/arrayBinarySearch)
 - [Linked List Zipper Merge](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/llMerge)
+- [Queue with Stacks](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/queueWithStacks)
+- [FIFO 'Animal Shelter'](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/fifoAnimalShelter)
 
 ### 401 - Data structures
 - [Singly Linked List](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/data-structures/linkedList)
