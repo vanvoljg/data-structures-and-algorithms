@@ -96,7 +96,7 @@ function Person(firstName, lastName, age) {
 const people = [
   new Person('Wes', 'Washington', 25),
   new Person('Casey', 'Codefellow', 38),
-  new Person('Stan', 'Seattle', 67)
+  new Person('Stan', 'Seattle', 67),
 ];
 
 const sortPeople = (arr) => {
@@ -144,7 +144,7 @@ const meetings = [
   new Meeting('Tuesday', '1145', '1315'),
   new Meeting('Wednesday', '0930', '1000'),
   new Meeting('Monday', '0900', '0945'),
-  new Meeting('Friday', '1200', '1345')
+  new Meeting('Friday', '1200', '1345'),
 ];
 
 const sortMeetingsByDay = (arr) => {
@@ -154,7 +154,7 @@ const sortMeetingsByDay = (arr) => {
     /tue(?:sday)?/i, // tue and tuesday
     /wed(?:nesday?)/i, // wed and wednesday
     /thur?(?:sday)?/i, // thu, thur, and thursday
-    /fri(?:day)?/i // fri and friday
+    /fri(?:day)?/i, // fri and friday
   ];
   return arr.sort((a, b) => {
     // this sort function finds the index in the above days array of each element's dayOfWeek property
@@ -183,7 +183,7 @@ const sortSchedule = (arr) => {
     /tue(?:sday)?/i, // tue and tuesday
     /wed(?:nesday?)/i, // wed and wednesday
     /thur?(?:sday)?/i, // thu, thur, and thursday
-    /fri(?:day)?/i // fri and friday
+    /fri(?:day)?/i, // fri and friday
   ];
   return arr.sort((a, b) => {
     if (a.dayOfWeek === b.dayOfWeek) {
@@ -226,7 +226,7 @@ describe('Testing challenge 2', () => {
     expect(alphabetize(['alphabet', 'Alphabet', 'carrot'])).toStrictEqual([
       'Alphabet',
       'alphabet',
-      'carrot'
+      'carrot',
     ]);
     expect(alphabetize([])).toStrictEqual([]);
   });
@@ -264,16 +264,16 @@ describe('Testing challenge 5', () => {
       sortByPrice([
         { name: 'Sweatshirt', price: 45 },
         { name: 'Bookmark', price: 2.5 },
-        { name: 'Tote bag', price: 15 }
+        { name: 'Tote bag', price: 15 },
       ])
     ).toStrictEqual([
       { name: 'Bookmark', price: 2.5 },
       { name: 'Tote bag', price: 15 },
-      { name: 'Sweatshirt', price: 45 }
+      { name: 'Sweatshirt', price: 45 },
     ]);
     expect(sortByPrice([{ price: 12 }, { price: 10 }])).toStrictEqual([
       { price: 10 },
-      { price: 12 }
+      { price: 12 },
     ]);
     expect(sortByPrice([])).toStrictEqual([]);
   });
@@ -285,13 +285,13 @@ describe('Testing challenge 6', () => {
       1,
       10,
       2.8,
-      -47.75
+      -47.75,
     ]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([
       1,
       100,
       2.82,
-      -47.75
+      -47.75,
     ]);
     expect(sortNumbersByLength([1, 2, 3])).toEqual(
       expect.arrayContaining([1, 2, 3])
@@ -304,7 +304,7 @@ describe('Testing challenge 7', () => {
     expect(sortPeople(people)).toStrictEqual([
       new Person('Casey', 'Codefellow', 38),
       new Person('Stan', 'Seattle', 67),
-      new Person('Wes', 'Washington', 25)
+      new Person('Wes', 'Washington', 25),
     ]);
     expect(
       sortPeople([{ lastName: 'banana' }, { lastName: 'apple' }])
@@ -319,23 +319,23 @@ describe('Testing challenge 8', () => {
       new Person('Casey', 'Codefellows', 37),
       new Person('Charlie', 'Codefellows', 21),
       new Person('Charles', 'Codefellows', 29),
-      new Person('Carol', 'Codefellow', 88)
+      new Person('Carol', 'Codefellow', 88),
     ];
     expect(sortPeopleBetter(family)).toStrictEqual([
       new Person('Carol', 'Codefellow', 88),
       new Person('Casey', 'Codefellows', 37),
       new Person('Casey', 'Codefellows', 55),
       new Person('Charles', 'Codefellows', 29),
-      new Person('Charlie', 'Codefellows', 21)
+      new Person('Charlie', 'Codefellows', 21),
     ]);
     expect(
       sortPeopleBetter([
         { firstName: 'andrew', lastName: 'apple' },
-        { firstName: 'andre', lastName: 'apple' }
+        { firstName: 'andre', lastName: 'apple' },
       ])
     ).toStrictEqual([
       { firstName: 'andre', lastName: 'apple' },
-      { firstName: 'andrew', lastName: 'apple' }
+      { firstName: 'andrew', lastName: 'apple' },
     ]);
   });
 });
@@ -346,7 +346,7 @@ describe('Testing challenge 9', () => {
     expect(sortedMeetings.slice(0, 2)).toEqual(
       expect.arrayContaining([
         new Meeting('Monday', '0900', '0945'),
-        new Meeting('Monday', '0900', '1000')
+        new Meeting('Monday', '0900', '1000'),
       ])
     );
     expect(sortedMeetings[2]).toStrictEqual(
@@ -355,7 +355,7 @@ describe('Testing challenge 9', () => {
     expect(sortedMeetings.slice(3, 5)).toEqual(
       expect.arrayContaining([
         new Meeting('Wednesday', '0930', '1000'),
-        new Meeting('Wednesday', '1300', '1500')
+        new Meeting('Wednesday', '1300', '1500'),
       ])
     );
     expect(sortedMeetings[5]).toStrictEqual(
@@ -372,7 +372,7 @@ describe('Testing challenge 10', () => {
       new Meeting('Tuesday', '1145', '1315'),
       new Meeting('Wednesday', '0930', '1000'),
       new Meeting('Wednesday', '1300', '1500'),
-      new Meeting('Friday', '1200', '1345')
+      new Meeting('Friday', '1200', '1345'),
     ]);
   });
 });

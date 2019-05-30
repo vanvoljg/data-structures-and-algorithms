@@ -28,44 +28,44 @@ let characters = [
     name: 'Eddard',
     spouse: 'Catelyn',
     children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
-    house: 'Stark'
+    house: 'Stark',
   },
   {
     name: 'Jon A.',
     spouse: 'Lysa',
     children: ['Robin'],
-    house: 'Arryn'
+    house: 'Arryn',
   },
   {
     name: 'Cersei',
     spouse: 'Robert',
     children: ['Joffrey', 'Myrcella', 'Tommen'],
-    house: 'Lannister'
+    house: 'Lannister',
   },
   {
     name: 'Daenarys',
     spouse: 'Khal Drogo',
     children: ['Drogon', 'Rhaegal', 'Viserion'],
-    house: 'Targaryen'
+    house: 'Targaryen',
   },
   {
     name: 'Mace',
     spouse: 'Alerie',
     children: ['Margaery', 'Loras'],
-    house: 'Tyrell'
+    house: 'Tyrell',
   },
   {
     name: 'Sansa',
     spouse: 'Tyrion',
     children: [],
-    house: 'Stark'
+    house: 'Stark',
   },
   {
     name: 'Jon S.',
     spouse: null,
     children: [],
-    house: 'Snow'
-  }
+    house: 'Snow',
+  },
 ];
 
 const totalCharacters = (arr) => {
@@ -84,7 +84,7 @@ const getHouses = (arr) => {
   // Solution code here...
   arr.forEach((person) => {
     houses.push(person.house);
-  })
+  });
   return houses;
 };
 
@@ -154,7 +154,7 @@ const houseSize = (arr) => {
     });
     sizes.push({
       house: Object.values(person)[3], // house name
-      members: count
+      members: count,
     });
   });
   return sizes;
@@ -190,7 +190,7 @@ const houseSurvivors = (arr) => {
     });
     survivors.push({
       house: Object.values(person)[3],
-      members: count
+      members: count,
     });
   });
   return survivors;

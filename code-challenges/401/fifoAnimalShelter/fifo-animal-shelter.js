@@ -2,7 +2,7 @@
 
 const {Queue} = require('../../../data-structures/stacksAndQueues/lib/stacks-and-queues.js');
 
-class AnimalSheter {
+module.exports = class AnimalSheter {
   constructor () {
     this.cats = new Queue();
     this.dogs = new Queue();
@@ -25,12 +25,12 @@ class AnimalSheter {
     switch (pref.toLowerCase()) {
     case 'cat':
       if ( this.cats.peek() ) {
-        return this.cats.pop();
+        return this.cats.dequeue();
       }
       return null; // No cats to send back
     case 'dog':
       if ( this.dogs.peek() ) {
-        return this.dogs.pop();
+        return this.dogs.dequeue();
       }
       return null;
     default:
@@ -38,4 +38,4 @@ class AnimalSheter {
     }
   }
 
-}
+};
