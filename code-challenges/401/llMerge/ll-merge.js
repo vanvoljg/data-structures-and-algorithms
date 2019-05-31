@@ -1,6 +1,6 @@
 'use strict';
 
-function mergeLists(list1, list2) {
+module.exports = function mergeLists(list1, list2) {
   let head = list1.head;
 
   if (list1.length === 0 && list2.length === 0) {
@@ -26,6 +26,4 @@ function mergeLists(list1, list2) {
   }
 
   return head;
-}
-
-module.export = exports = mergeLists;
+};
