@@ -7,13 +7,13 @@ module.exports = function fizzBuzzTree(root) {
   } else if (root.value % 5 === 0) {
     root.value = 'Buzz';
   } else if (root.value % 3 === 0) {
-    root.avlue = 'Fizz';
+    root.value = 'Fizz';
   }
 
   if (root.left) {
-    return fizzBuzzTree(root.left);
+    fizzBuzzTree(root.left);
   }
   if (root.right) {
-    return fizzBuzzTree(root.right);
+    fizzBuzzTree(root.right);
   }
 };
