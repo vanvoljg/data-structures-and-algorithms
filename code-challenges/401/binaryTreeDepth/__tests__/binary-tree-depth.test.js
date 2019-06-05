@@ -23,7 +23,7 @@ describe('binaryTreeDepth function', () => {
           value: 12,
           left: null,
           right: null,
-        }
+        },
       },
       right: null,
     },
@@ -39,7 +39,7 @@ describe('binaryTreeDepth function', () => {
         },
         right: null,
       },
-    }
+    },
   };
 
   it('should find depths of values', () => {
