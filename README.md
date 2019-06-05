@@ -31,4 +31,4 @@ Repository for work on data structures and algorithms
 ### 401 - Data structures
 - [Singly Linked List](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/data-structures/linkedList)
 - [Stack and Queue](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/data-structures/stack-and-queue)
-- Binary Tree and Binary Search Tree
+- [Binary Tree and Binary Search Tree](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/data-structures/tree)
