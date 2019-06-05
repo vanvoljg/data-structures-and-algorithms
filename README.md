@@ -26,6 +26,7 @@ Repository for work on data structures and algorithms
 - [Queue with Stacks](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/queueWithStacks)
 - [FIFO 'Animal Shelter'](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/fifoAnimalShelter)
 - [Fizz Buzz Tree](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/fizzBuzzTree)
+- [Binary Tree Depth](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/code-challenges/401/binaryTreeDepth)
 
 ### 401 - Data structures
 - [Singly Linked List](https://github.com/vanvoljg/data-structures-and-algorithms/tree/master/data-structures/linkedList)
