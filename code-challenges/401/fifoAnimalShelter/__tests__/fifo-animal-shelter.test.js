@@ -27,6 +27,12 @@ describe('AnimalShelter class', () => {
     expect(shelter.dequeue('dog')).toEqual('dog');
   });
 
+  it('returns null when dequeueing empty queues', () => {
+    let shelter = new AnimalShelter();
+    expect(shelter.dequeue('cat')).toBeNull();
+    expect(shelter.dequeue('dog')).toBeNull();
+  });
+
   it('will not enqueue anything else', () => {
     let shelter = new AnimalShelter();
     expect(() => {shelter.enqueue('fish');}).toThrow(SyntaxError);

@@ -6,6 +6,14 @@ const Node = require('../../../../data-structures/linkedList/lib/nodeSingle.js')
 
 describe('linked list merge function', () => {
 
+  it('works for empty lists', () => {
+    let list1 = new LinkedList();
+    let list2 = new LinkedList();
+    expect(()=> {
+      mergeLists(list1, list2);
+    }).not.toThrow();
+  });
+
   it('should be able to merge a linked list', () => {
     let list1 = new LinkedList('a');
     let list2 = new LinkedList('b');
