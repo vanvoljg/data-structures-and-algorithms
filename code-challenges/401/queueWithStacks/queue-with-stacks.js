@@ -1,6 +1,6 @@
 'use strict';
 
-const { Stack } = require('./lib/stacks-and-queues.js');
+const { Stack } = require('../../../data-structures/stacksAndQueues/lib/stacks-and-queues.js');
 
 module.exports = exports = class PseudoQueue {
   constructor() {
