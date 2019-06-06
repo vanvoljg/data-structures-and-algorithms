@@ -1,6 +1,6 @@
 'use strict';
 
-const {Queue} = require('../stacksAndQueues/lib/stacks-and-queues.js');
+const { Queue, Stack } = require('../stacksAndQueues/lib/stacks-and-queues.js');
 
 class Node {
   constructor(value) {
@@ -11,13 +11,29 @@ class Node {
 }
 
 class BinaryTree {
-
   constructor(value) {
     if (value) {
       this.root = new Node(value);
     } else {
       this.root = null;
     }
+  }
+
+  breadthFirst() {
+    if (this.root === null) {
+      return null;
+    }
+
+    let outputArray = [];
+    let queue = new Queue(this.root);
+    while (queue.peek()) {
+      let current = queue.dequeue();
+      outputArray.push(current.value);
+      current.left && queue.enqueue(current.left);
+      current.right && queue.enqueue(current.right);
+    }
+
+    return outputArray;
   }
 
   preOrder(root = this.root, outputArray = []) {
@@ -69,7 +85,7 @@ class BinaryTree {
     let max = tree.root.value;
     let queue = new Queue(tree.root);
 
-    while(queue.peek()) {
+    while (queue.peek()) {
       let current = queue.dequeue();
 
       max = Math.max(max, current.value);
@@ -79,7 +95,6 @@ class BinaryTree {
 
     return max;
   }
-
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -96,7 +111,7 @@ class BinarySearchTree extends BinaryTree {
       if (root.left !== null) {
         this.add(value, root.left);
       } else {
-        root.left = new Node( value );
+        root.left = new Node(value);
         return value;
       }
     }
@@ -104,25 +119,25 @@ class BinarySearchTree extends BinaryTree {
       if (root.right !== null) {
         this.add(value, root.right);
       } else {
-        root.right = new Node( value );
+        root.right = new Node(value);
         return value;
       }
     }
   }
 
   contains(value) {
-    this.validateNumericalInput( value );
-    if ( this.root === null ) {
-      throw new Error( 'Cannot search an empty tree' );
+    this.validateNumericalInput(value);
+    if (this.root === null) {
+      throw new Error('Cannot search an empty tree');
     }
-    let queue = new Queue( this.root );
-    while ( queue.peek() ) {
+    let queue = new Queue(this.root);
+    while (queue.peek()) {
       let current = queue.dequeue();
-      if ( current.value === value ) {
+      if (current.value === value) {
         return true;
       }
-      current.left && queue.enqueue( current.left );
-      current.right && queue.enqueue( current.right );
+      current.left && queue.enqueue(current.left);
+      current.right && queue.enqueue(current.right);
     }
     return false;
   }
@@ -140,9 +155,11 @@ class BinarySearchTree extends BinaryTree {
 
   static findMaximumValue(tree) {
     let current = tree.root;
-    while(current) {
+    while (current) {
       if (typeof current.value !== 'number') {
-        throw new Error('Tree contains non-numbers, cannot find a maximum value');
+        throw new Error(
+          'Tree contains non-numbers, cannot find a maximum value'
+        );
       }
       if (current.right === null) {
         return current.value;
