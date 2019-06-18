@@ -50,11 +50,9 @@ describe('BinaryTree class', () => {
     let tree = new BinaryTree('fish');
     expect(() => BinaryTree.findMaximumValue(tree)).toThrow();
   });
-
 });
 
 describe('BinarySearchTree class', () => {
-
   it('can create an empty tree', () => {
     let tree = new BinarySearchTree();
     expect(tree.root).toBeNull();
@@ -111,6 +109,4 @@ describe('BinarySearchTree class', () => {
     let tree = new BinarySearchTree('fish');
     expect(() => BinarySearchTree.findMaximumValue(tree)).toThrow();
   });
-
 });
-
