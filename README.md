@@ -28,7 +28,6 @@ Repository for work on data structures and algorithms
 - [Fizz Buzz Tree](./code-challenges/401/fizzBuzzTree)
 - [Binary Tree Depth](./code-challenges/401/binaryTreeDepth)
 - [Multiple Array Reverse](./code-challenges/401/arrayReverseMultiple)
-
 - [Second Largest In An Array - Multiple](/.code-challenges/401/multipleArraySecondLargest)
 
 ### 401 - Data structures
