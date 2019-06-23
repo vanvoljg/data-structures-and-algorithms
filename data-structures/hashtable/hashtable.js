@@ -18,7 +18,7 @@ module.exports = class Hashtable {
     this.BIG_PRIME = 5039;
     this.SMALL_PRIME = 101;
 
-    this.capacity = 12;
+    this.capacity = 127;
     this.internalStorage = new Array(this.capacity);
     for (let i = 0; i < this.internalStorage.length; i++) {
       this.internalStorage[i] = new LinkedList();
