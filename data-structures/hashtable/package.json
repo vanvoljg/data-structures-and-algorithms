@@ -2,7 +2,7 @@
   "name": "hashtable",
   "version": "1.0.0",
   "description": "",
-  "main": "hashtable.js",,
+  "main": "hashtable.js",
   "jest": {
     "testEnvironment": "node"
   },
@@ -17,10 +17,8 @@
     "watch": "nodemon index.js",
     "lint": "eslint '**/*.js'",
     "test": "jest --verbose --coverage",
-    "test-watch": "jest --watchAll --verbose --coverage",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+    "test-watch": "jest --watchAll --verbose --coverage"
   },
-
   "keywords": [],
   "author": "Jesse Van Volkinburg <vanvoljg@gmail.com>",
   "license": "MIT",
