@@ -1,15 +1,17 @@
-# Binary Tree Depth
-Given a binary tree and a value to find, return the depth of the found node.
+# Binary Tree Intersection
+
+Given two binary trees, find the values that are shared between both trees.
 
 ## Challenge
-Find a given value in the tree, then return the depth of that node, meaning the number of links between the tree root and the found node.
+
+- Write a function called `tree_intersection` that takes two binary tree parameters.
+- Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
 
 ## Approach & Efficiency
-- Use depth-first recursive traversal
-- Keep track of the number of recursions - this is the depth of a found node
-- Base conditions to end recursion: when current node is null, return null; when search value is found, return the depth, meaning the number of recursions.
+
+- Traverse one tree and build a set from the values
+- Traverse the second tree and check each node for presence in the first set. If found, add to an output set.
 
 ## Solution
-![Embedded whiteboard picture](./assets/binary-tree-depth-1.jpg)
-![Embedded whiteboard picture](./assets/binary-tree-depth-2.jpg)
-![Embedded whiteboard picture](./assets/binary-tree-depth-3.jpg)
+
+![Whiteboard work](./assets/tree-intersection.jpg)
