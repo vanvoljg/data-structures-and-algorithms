@@ -4,7 +4,7 @@ Given two binary trees, find the values that are shared between both trees.
 
 ## Challenge
 
-- Write a function called `tree_intersection` that takes two binary tree parameters.
+- Write a function called `treeIntersection` that takes two binary tree parameters.
 - Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
 
 ## Approach & Efficiency
