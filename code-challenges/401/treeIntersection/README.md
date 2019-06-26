@@ -15,3 +15,7 @@ Given two binary trees, find the values that are shared between both trees.
 ## Solution
 
 ![Whiteboard work](./assets/tree-intersection.jpg)
+
+## Collaborators
+
+Rebecca Peterson, Jagdeep Singh, Melissa Stock, Morgana Spake
