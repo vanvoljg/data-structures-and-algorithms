@@ -1,6 +1,6 @@
 'use strict';
 
-const { Queue, Stack } = require('../stacksAndQueues/lib/stacks-and-queues.js');
+const { Queue } = require('../stacksAndQueues/lib/stacks-and-queues.js');
 
 class Node {
   constructor(value) {
@@ -75,7 +75,7 @@ class BinaryTree {
     return outputArray;
   }
 
-  static findMaximumValue(tree) {
+  findMaximumValue(tree) {
     if (tree.root === null) {
       return null;
     }
