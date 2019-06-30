@@ -1,6 +1,6 @@
 'use strict';
 
-const { Queue, Stack } = require('../stacksAndQueues/lib/stacks-and-queues.js');
+const { Queue } = require('../stacksAndQueues/lib/stacks-and-queues.js');
 
 class Node {
   constructor(value) {
