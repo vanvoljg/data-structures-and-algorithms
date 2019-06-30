@@ -29,6 +29,7 @@ Repository for work on data structures and algorithms
 - [Binary Tree Depth](./code-challenges/401/binaryTreeDepth)
 - [Multiple Array Reverse](./code-challenges/401/arrayReverseMultiple)
 - [Second Largest In An Array - Multiple](/.code-challenges/401/multipleArraySecondLargest)
+- [Binary Tree Shortest Path](./code-challenges/401/binaryTreeShortestPath)
 - [Binary Tree - Intersection Set](./code-challenges/401/treeIntersection)
 - [LEFT JOIN](./code-challenges/401/leftJoin)
 
