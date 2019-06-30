@@ -19,6 +19,29 @@ class BinaryTree {
     }
   }
 
+  add(value) {
+    validateNumericalInput(value);
+    if (this.root === null) {
+      this.root = new Node(value);
+      return this;
+    }
+
+    const queue = new Queue(this.root);
+    while (queue.peek()) {
+      const current = queue.dequeue();
+      if (current.left === null) {
+        current.left = new Node(value);
+        return this;
+      }
+      if (current.right === null) {
+        current.right = new Node(value);
+        return this;
+      }
+      current.left && queue.enqueue(current.left);
+      current.right && queue.enqueue(current.right);
+    }
+  }
+
   breadthFirst() {
     if (this.root === null) {
       return null;
@@ -75,15 +98,15 @@ class BinaryTree {
     return outputArray;
   }
 
-  findMaximumValue(tree) {
-    if (tree.root === null) {
+  findMaximumValue() {
+    if (this.root === null) {
       return null;
     }
-    if (typeof tree.root.value !== 'number') {
+    if (typeof this.root.value !== 'number') {
       throw new Error('Tree contains non-numbers, cannot find a maximum value');
     }
-    let max = tree.root.value;
-    let queue = new Queue(tree.root);
+    let max = this.root.value;
+    let queue = new Queue(this.root);
 
     while (queue.peek()) {
       let current = queue.dequeue();
@@ -103,7 +126,11 @@ class BinarySearchTree extends BinaryTree {
   }
 
   add(value, root = this.root) {
-    this.validateNumericalInput(value);
+    validateNumericalInput(value);
+    if (root === null) {
+      this.root = new Node(value);
+      return value;
+    }
     if (root.value === value) {
       throw new Error(`${value} already in the tree`);
     }
@@ -126,7 +153,7 @@ class BinarySearchTree extends BinaryTree {
   }
 
   contains(value) {
-    this.validateNumericalInput(value);
+    validateNumericalInput(value);
     if (this.root === null) {
       throw new Error('Cannot search an empty tree');
     }
@@ -142,19 +169,8 @@ class BinarySearchTree extends BinaryTree {
     return false;
   }
 
-  validateNumericalInput(value) {
-    if (typeof value !== 'number') {
-      this.error();
-    }
-    return true;
-  }
-
-  error() {
-    throw new TypeError('value must be a number');
-  }
-
-  static findMaximumValue(tree) {
-    let current = tree.root;
+  findMaximumValue() {
+    let current = this.root;
     while (current) {
       if (typeof current.value !== 'number') {
         throw new Error(
@@ -166,7 +182,19 @@ class BinarySearchTree extends BinaryTree {
       }
       current = current.right;
     }
+    return null;
   }
+}
+
+function validateNumericalInput(value) {
+  if (typeof value !== 'number') {
+    error();
+  }
+  return true;
+}
+
+function error() {
+  throw new TypeError('value must be a number');
 }
 
 module.exports = { Node, BinaryTree, BinarySearchTree };

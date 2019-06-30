@@ -43,12 +43,12 @@ describe('BinaryTree class', () => {
     tree.root.left = new Node(20);
     tree.root.right = new Node(25);
     tree.root.right.left = new Node(17);
-    expect(BinaryTree.findMaximumValue(tree)).toEqual(25);
+    expect(tree.findMaximumValue()).toEqual(25);
   });
 
   it('returns null if a value in the tree is a non-number', () => {
     let tree = new BinaryTree('fish');
-    expect(() => BinaryTree.findMaximumValue(tree)).toThrow();
+    expect(() => tree.findMaximumValue()).toThrow();
   });
 });
 
@@ -102,11 +102,11 @@ describe('BinarySearchTree class', () => {
     tree.root.left = new Node(20);
     tree.root.right = new Node(25);
     tree.root.right.left = new Node(17);
-    expect(BinarySearchTree.findMaximumValue(tree)).toEqual(25);
+    expect(tree.findMaximumValue()).toEqual(25);
   });
 
-  it('returns null if a value in the tree is a non-number', () => {
+  it('throws if a value in the tree is a non-number', () => {
     let tree = new BinarySearchTree('fish');
-    expect(() => BinarySearchTree.findMaximumValue(tree)).toThrow();
+    expect(() => tree.findMaximumValue()).toThrow();
   });
 });
