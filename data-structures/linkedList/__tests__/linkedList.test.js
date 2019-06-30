@@ -62,9 +62,9 @@ describe('Singly linked lists', () => {
   });
 
   describe('includes() function', () => {
-    it('Will return null when searching an empty list', () => {
+    it('Will return false when searching an empty list', () => {
       let list = new LinkedList();
-      expect(list.includes('value')).toBeNull();
+      expect(list.includes('value')).toEqual(false);
     });
 
     it('Will return null when searching for no value', () => {
