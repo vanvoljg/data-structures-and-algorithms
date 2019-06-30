@@ -9,8 +9,8 @@ module.exports = class NodeSingle {
   // If given a next, use that as the reference pointed by next.
   /**
    * Constructor
-   * @param {*} value Value to create the node with
-   * @param {Node} next The node which will be pointed to by the new node.
+   * @param {*} [value=null] Value to create the node with
+   * @param {Node} [next=null] The node which will be pointed to by the new node.
    */
   constructor(value = null, next = null) {
     this.value = value;
