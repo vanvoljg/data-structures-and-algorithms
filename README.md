@@ -30,8 +30,10 @@ Repository for work on data structures and algorithms
 - [Multiple Array Reverse](./code-challenges/401/arrayReverseMultiple)
 - [Second Largest In An Array - Multiple](/.code-challenges/401/multipleArraySecondLargest)
 - [Binary Tree - Intersection Set](./code-challenges/401/treeIntersection)
+- [LEFT JOIN](./code-challenges/401/leftJoin)
 
 ### 401 - Data structures
 - [Singly Linked List](./data-structures/linkedList)
 - [Stack and Queue](./data-structures/stack-and-queue)
 - [Binary Tree and Binary Search Tree](./data-structures/tree)
+- [Hashtable](./data-structures/hashtable)

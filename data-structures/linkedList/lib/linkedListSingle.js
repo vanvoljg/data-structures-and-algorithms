@@ -9,13 +9,13 @@ const Node = require('./nodeSingle.js');
 module.exports = class LinkedListSingle {
   /**
    * Constructor
-   * @param {*} value Value to use as the value of the first node of the list.
+   * @param {*} [value=null] Value to use as the value of the first node of the list.
    * If not given, will create an empty list with no nodes.
    */
   constructor(value) {
     // If the list is created with a value, set head to point to a new node with that value
     // Otherwise, head should point to null.
-    this.head = this.tail = null;
+    this.head = null;
     this.length = 0;
 
     if (value) {
@@ -135,11 +135,6 @@ module.exports = class LinkedListSingle {
       return null;
     }
 
-    if (!this.head) {
-      console.error('Cannot search in an empty list');
-      return null;
-    }
-
     let current = this.head;
 
     // Traverse the list
@@ -159,10 +154,6 @@ module.exports = class LinkedListSingle {
    */
   print() {
     let printArray = [];
-
-    if (!this.head) {
-      return printArray;
-    }
 
     let current = this.head;
 
