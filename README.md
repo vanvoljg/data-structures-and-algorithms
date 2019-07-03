@@ -32,6 +32,7 @@ Repository for work on data structures and algorithms
 - [Binary Tree Shortest Path](./code-challenges/401/binaryTreeShortestPath)
 - [Binary Tree - Intersection Set](./code-challenges/401/treeIntersection)
 - [LEFT JOIN](./code-challenges/401/leftJoin)
+- [Flag Sort](./code-challenges/401/flagSort)
 
 ### 401 - Data structures
 - [Singly Linked List](./data-structures/linkedList)
