@@ -14,6 +14,11 @@ Write a function to determine if a chess board, given as a 2D array, has a king 
   - Once the king is found, save that coordinate to somewhere we can access later
 - Check the king's position in the mirror array. If it's a space in danger, the king can be taken
 
+**Efficiency**
+
+- Time: O(1) - The input never changes, so the time is always the same (possibly O(n), where n is the number of pieces on the board)
+- Space: O(1) - Output is always the same, and the same amount of space is used regardless of how many pieces are on the board
+
 ## Solution
 
 ![Embedded whiteboard picture](./assets/checkmate.jpg)
