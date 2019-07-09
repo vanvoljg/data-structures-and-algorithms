@@ -37,3 +37,4 @@ Repository for work on data structures and algorithms
 - [Stack and Queue](./data-structures/stack-and-queue)
 - [Binary Tree and Binary Search Tree](./data-structures/tree)
 - [Hashtable](./data-structures/hashtable)
+- [Graph](./data-structures/graph)
