@@ -42,7 +42,7 @@ graph.addEdge(vertex5, vertex10, 1);
 graph.addEdge(vertex10, vertex20, 5);
 graph.addEdge(vertex10, vertex15, 1);
 
-graph.addEdge(vertex15, vertex25, 1);
+graph.addEdge(vertex15, vertex25, 100);
 
 graph.addEdge(vertex20, vertex25, 10);
 

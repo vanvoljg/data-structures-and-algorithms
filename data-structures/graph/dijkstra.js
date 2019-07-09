@@ -40,10 +40,9 @@ module.exports = (graph, startVertex, goalVertex) => {
         continue;
       }
 
-      const nextWeight = shortestPathSoFar.get(nextVertex);
-      const pathWeight = nextWeight ? nextWeight + weight : weight;
+      const pathWeight = shortestPathSoFar.get(currentVertex) + weight;
       if (
-        !shortestPathSoFar.has(neighbor) ||
+        !shortestPathSoFar.has(nextVertex) ||
         pathWeight < shortestPathSoFar.get(nextVertex)
       ) {
         shortestPathSoFar.set(nextVertex, pathWeight);
