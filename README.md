@@ -31,6 +31,7 @@ Repository for work on data structures and algorithms
 - [Second Largest In An Array - Multiple](/.code-challenges/401/multipleArraySecondLargest)
 - [Binary Tree Shortest Path](./code-challenges/401/binaryTreeShortestPath)
 - [LEFT JOIN](./code-challenges/401/leftJoin)
+- [Most Frequent Characters In A Stream](./code-challenges/401/mostFrequentCharacters)
 
 ### 401 - Data structures
 - [Singly Linked List](./data-structures/linkedList)
