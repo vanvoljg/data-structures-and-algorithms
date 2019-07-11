@@ -33,6 +33,7 @@ Repository for work on data structures and algorithms
 - [Binary Tree - Intersection Set](./code-challenges/401/treeIntersection)
 - [LEFT JOIN](./code-challenges/401/leftJoin)
 - [Flag Sort](./code-challenges/401/flagSort)
+- [Most Frequent Characters In A Stream](./code-challenges/401/mostFrequentCharacters)
 
 ### 401 - Data structures
 - [Singly Linked List](./data-structures/linkedList)
