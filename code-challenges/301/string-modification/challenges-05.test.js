@@ -231,7 +231,7 @@ const extractVowels = (str) => {
     str.replace(vowelsPattern, (match) => {
       vowelArr.push(match);
       return '';
-    })
+    }),
   );
   // now sort the vowel array alphabetical
   vowelArr.sort();
