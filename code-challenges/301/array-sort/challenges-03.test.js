@@ -221,7 +221,7 @@ describe('Testing challenge 1', () => {
 describe('Testing challenge 2', () => {
   test('It should sort strings alphabetically', () => {
     expect(
-      alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot'])
+      alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot']),
     ).toStrictEqual(['Alphabet', 'Zebra', 'alphabet', 'carrot']);
     expect(alphabetize(['alphabet', 'Alphabet', 'carrot'])).toStrictEqual([
       'Alphabet',
@@ -237,7 +237,7 @@ describe('Testing challenge 3', () => {
     const ans = sortByLength(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
     expect(ans.slice(0, 2)).toStrictEqual(['Zebra', 'carrot']);
     expect(ans.slice(2, 4)).toEqual(
-      expect.arrayContaining(['Alphabet', 'alphabet'])
+      expect.arrayContaining(['Alphabet', 'alphabet']),
     );
     expect(sortByLength(['a', 'bc', ''])).toStrictEqual(['', 'a', 'bc']);
     expect(sortByLength(['a'])).toStrictEqual(['a']);
@@ -248,11 +248,11 @@ describe('Testing challenge 3', () => {
 describe('Testing challenge 4', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(
-      alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])
+      alphabetizeBetter(['Alice', 'apple', 'alert', 'Average']),
     ).toStrictEqual(['alert', 'Alice', 'apple', 'Average']);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
     expect(ans.slice(0, 2)).toEqual(
-      expect.arrayContaining(['Alphabet', 'alphabet'])
+      expect.arrayContaining(['Alphabet', 'alphabet']),
     );
     expect(ans.slice(2)).toStrictEqual(['carrot', 'Zebra']);
   });
@@ -265,7 +265,7 @@ describe('Testing challenge 5', () => {
         { name: 'Sweatshirt', price: 45 },
         { name: 'Bookmark', price: 2.5 },
         { name: 'Tote bag', price: 15 },
-      ])
+      ]),
     ).toStrictEqual([
       { name: 'Bookmark', price: 2.5 },
       { name: 'Tote bag', price: 15 },
@@ -294,7 +294,7 @@ describe('Testing challenge 6', () => {
       -47.75,
     ]);
     expect(sortNumbersByLength([1, 2, 3])).toEqual(
-      expect.arrayContaining([1, 2, 3])
+      expect.arrayContaining([1, 2, 3]),
     );
   });
 });
@@ -307,7 +307,7 @@ describe('Testing challenge 7', () => {
       new Person('Wes', 'Washington', 25),
     ]);
     expect(
-      sortPeople([{ lastName: 'banana' }, { lastName: 'apple' }])
+      sortPeople([{ lastName: 'banana' }, { lastName: 'apple' }]),
     ).toStrictEqual([{ lastName: 'apple' }, { lastName: 'banana' }]);
   });
 });
@@ -332,7 +332,7 @@ describe('Testing challenge 8', () => {
       sortPeopleBetter([
         { firstName: 'andrew', lastName: 'apple' },
         { firstName: 'andre', lastName: 'apple' },
-      ])
+      ]),
     ).toStrictEqual([
       { firstName: 'andre', lastName: 'apple' },
       { firstName: 'andrew', lastName: 'apple' },
@@ -347,19 +347,19 @@ describe('Testing challenge 9', () => {
       expect.arrayContaining([
         new Meeting('Monday', '0900', '0945'),
         new Meeting('Monday', '0900', '1000'),
-      ])
+      ]),
     );
     expect(sortedMeetings[2]).toStrictEqual(
-      new Meeting('Tuesday', '1145', '1315')
+      new Meeting('Tuesday', '1145', '1315'),
     );
     expect(sortedMeetings.slice(3, 5)).toEqual(
       expect.arrayContaining([
         new Meeting('Wednesday', '0930', '1000'),
         new Meeting('Wednesday', '1300', '1500'),
-      ])
+      ]),
     );
     expect(sortedMeetings[5]).toStrictEqual(
-      new Meeting('Friday', '1200', '1345')
+      new Meeting('Friday', '1200', '1345'),
     );
   });
 });

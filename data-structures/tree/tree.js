@@ -174,7 +174,7 @@ class BinarySearchTree extends BinaryTree {
     while (current) {
       if (typeof current.value !== 'number') {
         throw new Error(
-          'Tree contains non-numbers, cannot find a maximum value'
+          'Tree contains non-numbers, cannot find a maximum value',
         );
       }
       if (current.right === null) {
